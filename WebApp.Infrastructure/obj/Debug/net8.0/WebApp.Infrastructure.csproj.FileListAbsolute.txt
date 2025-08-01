@@ -1,0 +1,11 @@
+D:\Reactjs\API\WebApp.Infrastructure\bin\Debug\net8.0\WebApp.Infrastructure.deps.json
+D:\Reactjs\API\WebApp.Infrastructure\bin\Debug\net8.0\WebApp.Infrastructure.dll
+D:\Reactjs\API\WebApp.Infrastructure\bin\Debug\net8.0\WebApp.Infrastructure.pdb
+D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\WebApp.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\WebApp.Infrastructure.AssemblyInfoInputs.cache
+D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\WebApp.Infrastructure.AssemblyInfo.cs
+D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\WebApp.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\WebApp.Infrastructure.dll
+D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\refint\WebApp.Infrastructure.dll
+D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\WebApp.Infrastructure.pdb
+D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\ref\WebApp.Infrastructure.dll

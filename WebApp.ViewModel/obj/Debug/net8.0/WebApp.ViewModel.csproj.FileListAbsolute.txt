@@ -1,0 +1,17 @@
+D:\Reactjs\API\WebApp.ViewModel\bin\Debug\net8.0\WebApp.ViewModel.deps.json
+D:\Reactjs\API\WebApp.ViewModel\bin\Debug\net8.0\WebApp.ViewModel.dll
+D:\Reactjs\API\WebApp.ViewModel\bin\Debug\net8.0\WebApp.ViewModel.pdb
+D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\WebApp.ViewModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\WebApp.ViewModel.AssemblyInfoInputs.cache
+D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\WebApp.ViewModel.AssemblyInfo.cs
+D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\WebApp.ViewModel.csproj.CoreCompileInputs.cache
+D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\WebApp.ViewModel.dll
+D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\refint\WebApp.ViewModel.dll
+D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\WebApp.ViewModel.pdb
+D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\ref\WebApp.ViewModel.dll
+D:\Reactjs\API\WebApp.ViewModel\bin\Debug\net8.0\WebApp.Model.dll
+D:\Reactjs\API\WebApp.ViewModel\bin\Debug\net8.0\WebApp.Model.pdb
+D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\WebApp.ViewModel.csproj.AssemblyReference.cache
+D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\WebApp.V.D6F47A36.Up2Date
+D:\Reactjs\API\WebApp.ViewModel\bin\Debug\net8.0\WebApp.Infrastructure.dll
+D:\Reactjs\API\WebApp.ViewModel\bin\Debug\net8.0\WebApp.Infrastructure.pdb

@@ -1,0 +1,17 @@
+D:\Reactjs\API\WebApp.Interface\bin\Debug\net8.0\WebApp.Interface.deps.json
+D:\Reactjs\API\WebApp.Interface\bin\Debug\net8.0\WebApp.Interface.dll
+D:\Reactjs\API\WebApp.Interface\bin\Debug\net8.0\WebApp.Interface.pdb
+D:\Reactjs\API\WebApp.Interface\bin\Debug\net8.0\WebApp.Model.dll
+D:\Reactjs\API\WebApp.Interface\bin\Debug\net8.0\WebApp.Model.pdb
+D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\WebApp.Interface.csproj.AssemblyReference.cache
+D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\WebApp.Interface.GeneratedMSBuildEditorConfig.editorconfig
+D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\WebApp.Interface.AssemblyInfoInputs.cache
+D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\WebApp.Interface.AssemblyInfo.cs
+D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\WebApp.Interface.csproj.CoreCompileInputs.cache
+D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\WebApp.I.B6FD365D.Up2Date
+D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\WebApp.Interface.dll
+D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\refint\WebApp.Interface.dll
+D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\WebApp.Interface.pdb
+D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\ref\WebApp.Interface.dll
+D:\Reactjs\API\WebApp.Interface\bin\Debug\net8.0\WebApp.Infrastructure.dll
+D:\Reactjs\API\WebApp.Interface\bin\Debug\net8.0\WebApp.Infrastructure.pdb

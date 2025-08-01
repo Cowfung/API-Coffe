@@ -1,0 +1,15 @@
+D:\Reactjs\API\WebApp.Data\bin\Debug\net8.0\WebApp.Data.deps.json
+D:\Reactjs\API\WebApp.Data\bin\Debug\net8.0\WebApp.Data.dll
+D:\Reactjs\API\WebApp.Data\bin\Debug\net8.0\WebApp.Data.pdb
+D:\Reactjs\API\WebApp.Data\bin\Debug\net8.0\WebApp.Model.dll
+D:\Reactjs\API\WebApp.Data\bin\Debug\net8.0\WebApp.Model.pdb
+D:\Reactjs\API\WebApp.Data\obj\Debug\net8.0\WebApp.Data.csproj.AssemblyReference.cache
+D:\Reactjs\API\WebApp.Data\obj\Debug\net8.0\WebApp.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Reactjs\API\WebApp.Data\obj\Debug\net8.0\WebApp.Data.AssemblyInfoInputs.cache
+D:\Reactjs\API\WebApp.Data\obj\Debug\net8.0\WebApp.Data.AssemblyInfo.cs
+D:\Reactjs\API\WebApp.Data\obj\Debug\net8.0\WebApp.Data.csproj.CoreCompileInputs.cache
+D:\Reactjs\API\WebApp.Data\obj\Debug\net8.0\WebApp.D.BEC44CCA.Up2Date
+D:\Reactjs\API\WebApp.Data\obj\Debug\net8.0\WebApp.Data.dll
+D:\Reactjs\API\WebApp.Data\obj\Debug\net8.0\refint\WebApp.Data.dll
+D:\Reactjs\API\WebApp.Data\obj\Debug\net8.0\WebApp.Data.pdb
+D:\Reactjs\API\WebApp.Data\obj\Debug\net8.0\ref\WebApp.Data.dll
