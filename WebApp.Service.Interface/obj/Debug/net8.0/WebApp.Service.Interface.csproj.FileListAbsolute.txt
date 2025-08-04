@@ -17,3 +17,4 @@ D:\Reactjs\API\WebApp.Service.Interface\obj\Debug\net8.0\WebApp.Service.Interfac
 D:\Reactjs\API\WebApp.Service.Interface\obj\Debug\net8.0\WebApp.S.9C9082D7.Up2Date
 D:\Reactjs\API\WebApp.Service.Interface\bin\Debug\net8.0\WebApp.Infrastructure.dll
 D:\Reactjs\API\WebApp.Service.Interface\bin\Debug\net8.0\WebApp.Infrastructure.pdb
+D:\Reactjs\API\WebApp.Service.Interface\obj\Debug\net8.0\WebApp.Service.Interface.sourcelink.json

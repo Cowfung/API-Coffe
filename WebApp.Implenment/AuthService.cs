@@ -58,6 +58,7 @@ namespace WebApp.Service.Implenment
             string email = null;
             string fullname = null;
             string providerKey = null;
+           
             if (request.Provider == "Google")
             {
                 var payload = await GoogleJsonWebSignature.ValidateAsync(request.IdToken);
@@ -71,12 +72,23 @@ namespace WebApp.Service.Implenment
                 var result = await client.GetStringAsync(
                     $"https://graph.facebook.com/me?fields=id,name,email&access_token={request.IdToken}");
                 var facebookData = JsonSerializer.Deserialize<FacebookUserInfo>(result);
+               
                 email = facebookData.Email;
                 fullname = facebookData.Name;
                 providerKey = facebookData.Id;
             }
             if (string.IsNullOrEmpty(email))
-                throw new Exception("Cannot get email from external provider");
+            {
+                if (request.Provider == "Facebook" && !string.IsNullOrEmpty(providerKey))
+                {
+                    // Fallback: tạo email giả dựa trên Facebook ID
+                    email = $"{providerKey}@facebook.com";
+                }
+                else
+                {
+                    throw new Exception("Cannot get email from external provider");
+                }
+            }          
 
             user = await _userManager.FindByEmailAsync(email);
             if (user == null)
@@ -96,6 +108,8 @@ namespace WebApp.Service.Implenment
                 await _userManager.AddLoginAsync(user, new UserLoginInfo(
                     request.Provider, providerKey, request.Provider));
             }
+          
+
             return await GenerateJwtToken(user);
         }
 

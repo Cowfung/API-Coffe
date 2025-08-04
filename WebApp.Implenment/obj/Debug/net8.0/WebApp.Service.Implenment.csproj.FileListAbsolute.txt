@@ -21,3 +21,4 @@ D:\Reactjs\API\WebApp.Implenment\obj\Debug\net8.0\WebApp.Service.Implenment.pdb
 D:\Reactjs\API\WebApp.Implenment\obj\Debug\net8.0\ref\WebApp.Service.Implenment.dll
 D:\Reactjs\API\WebApp.Implenment\bin\Debug\net8.0\WebApp.Infrastructure.dll
 D:\Reactjs\API\WebApp.Implenment\bin\Debug\net8.0\WebApp.Infrastructure.pdb
+D:\Reactjs\API\WebApp.Implenment\obj\Debug\net8.0\WebApp.Service.Implenment.sourcelink.json

@@ -15,3 +15,4 @@ D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\WebApp.ViewModel.csproj.Assembl
 D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\WebApp.V.D6F47A36.Up2Date
 D:\Reactjs\API\WebApp.ViewModel\bin\Debug\net8.0\WebApp.Infrastructure.dll
 D:\Reactjs\API\WebApp.ViewModel\bin\Debug\net8.0\WebApp.Infrastructure.pdb
+D:\Reactjs\API\WebApp.ViewModel\obj\Debug\net8.0\WebApp.ViewModel.sourcelink.json
