@@ -23,6 +23,7 @@ namespace WebApplication1.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
+           
             var response = await _authService.LoginAsync(loginRequest);
             return Success(response);
         }
@@ -36,6 +37,7 @@ namespace WebApplication1.Controllers
         [HttpPost("external-login")]
         public async Task<IActionResult> ExternalLogin([FromBody] ExternalLoginRequest externalLoginRequest)
         {
+           
             var respone = await _authService.ExternalLoginAsync(externalLoginRequest);
             //SetJwtCookie(respone.Token,respone.ExpireAt);
             return Success(respone);

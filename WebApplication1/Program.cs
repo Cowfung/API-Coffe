@@ -100,6 +100,17 @@ builder.Services.AddSwaggerGen(c =>
     }});
 });
 //builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:5173") // Vite mặc định port này
+                   .AllowAnyMethod()
+                   .AllowAnyHeader()
+                   .AllowCredentials();
+        });
+});
 
 
 
@@ -116,7 +127,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("AllowReactApp");
 app.UseAuthentication();
 app.UseAuthorization();
 
