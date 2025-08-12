@@ -26,6 +26,12 @@ namespace WebApp.ViewModel.Mapper
                 .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName));
             CreateMap<UpdateUserRequest, AppUser>()
             .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+
+            CreateMap<CommentCreateRequest, Comment>()
+                .ForMember(dest => dest.UserId,
+                    opt => opt.MapFrom(src =>
+                        string.IsNullOrEmpty(src.UserId) ? (Guid?)null : Guid.Parse(src.UserId)));
+
         }
 
     }

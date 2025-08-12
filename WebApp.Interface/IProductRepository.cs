@@ -9,5 +9,7 @@ namespace WebApp.Interface
 {
     public interface IProductRepository : IRepository<Product,int>
     {
+        Task<Product> GetProductWithDetails(int id);
+        Task<List<string>> GetSizesByProductIdAsync(int productId);
     }
 }

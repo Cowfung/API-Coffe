@@ -13,3 +13,4 @@ D:\Reactjs\API\WebApp.Model\bin\Debug\net8.0\WebApp.Infrastructure.dll
 D:\Reactjs\API\WebApp.Model\bin\Debug\net8.0\WebApp.Infrastructure.pdb
 D:\Reactjs\API\WebApp.Model\obj\Debug\net8.0\WebApp.Model.csproj.AssemblyReference.cache
 D:\Reactjs\API\WebApp.Model\obj\Debug\net8.0\WebApp.M.58BA7B3F.Up2Date
+D:\Reactjs\API\WebApp.Model\obj\Debug\net8.0\WebApp.Model.sourcelink.json

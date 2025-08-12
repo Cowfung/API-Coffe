@@ -9,3 +9,4 @@ D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\WebApp.Infrastructure.dll
 D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\refint\WebApp.Infrastructure.dll
 D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\WebApp.Infrastructure.pdb
 D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\ref\WebApp.Infrastructure.dll
+D:\Reactjs\API\WebApp.Infrastructure\obj\Debug\net8.0\WebApp.Infrastructure.sourcelink.json

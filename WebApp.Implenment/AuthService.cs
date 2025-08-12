@@ -46,6 +46,7 @@ namespace WebApp.Service.Implenment
         public async Task<AuthResponse> RegisterAsync(RegisterRequest request)
         {
             var user = _mapper.Map<AppUser>(request);
+            user.AvatarUrl ??= "/images/default-avatar.png";
             var result = await _userManager.CreateAsync(user, request.Password);
             if (!result.Succeeded)
                 throw new Exception("Register failed");
@@ -58,6 +59,7 @@ namespace WebApp.Service.Implenment
             string email = null;
             string fullname = null;
             string providerKey = null;
+            string avatarUrl = null;
            
             if (request.Provider == "Google")
             {
@@ -65,6 +67,9 @@ namespace WebApp.Service.Implenment
                 email = payload.Email;
                 fullname = payload.Name;
                 providerKey = payload.Subject;
+                avatarUrl = payload.Picture;
+                
+
             }
             else if (request.Provider == "Facebook")
             {
@@ -76,6 +81,7 @@ namespace WebApp.Service.Implenment
                 email = facebookData.Email;
                 fullname = facebookData.Name;
                 providerKey = facebookData.Id;
+                avatarUrl = $"https://graph.facebook.com/{facebookData.Id}/picture?type=large";
             }
             if (string.IsNullOrEmpty(email))
             {
@@ -98,7 +104,10 @@ namespace WebApp.Service.Implenment
                     Email = email,
                     UserName = email,
                     FullName = fullname,
-                    EmailConfirmed = true
+                    AvatarUrl = avatarUrl,
+                    EmailConfirmed = true,
+                   
+
                 };
 
                 var createResult = await _userManager.CreateAsync(user);
@@ -125,6 +134,7 @@ namespace WebApp.Service.Implenment
             new Claim(ClaimTypes.NameIdentifier, user.Id),
             new Claim(ClaimTypes.Email, user.Email),
             new Claim(ClaimTypes.Name, user.FullName),
+            new Claim("avatar",user.AvatarUrl ?? ""),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
@@ -152,10 +162,12 @@ namespace WebApp.Service.Implenment
 
             return new AuthResponse
             {
+                Id = user.Id,
                 Token = tokenString,
                 ExpireAt = token.ValidTo,
                 Email = user.Email,
-                FullName = user.FullName
+                FullName = user.FullName,
+                AvatarUrl = user.AvatarUrl,
             };
         }
 

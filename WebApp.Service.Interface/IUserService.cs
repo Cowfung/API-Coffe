@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,6 @@ namespace WebApp.Service.Interface
     {
         Task<UserInfoResponse> GetUserInfoAsync(string userId);
         Task<UserInfoResponse> UpdateUserAsync(string userId, UpdateUserRequest request);
+        Task<string> UploadAvatarAsync(IFormFile file,string userId);
     }
 }

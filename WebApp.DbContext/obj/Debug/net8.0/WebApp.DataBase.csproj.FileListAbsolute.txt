@@ -17,3 +17,4 @@ D:\Reactjs\API\WebApp.DbContext\obj\Debug\net8.0\WebApp.DataBase.genruntimeconfi
 D:\Reactjs\API\WebApp.DbContext\obj\Debug\net8.0\ref\WebApp.DataBase.dll
 D:\Reactjs\API\WebApp.DbContext\bin\Debug\net8.0\WebApp.Infrastructure.dll
 D:\Reactjs\API\WebApp.DbContext\bin\Debug\net8.0\WebApp.Infrastructure.pdb
+D:\Reactjs\API\WebApp.DbContext\obj\Debug\net8.0\WebApp.DataBase.sourcelink.json

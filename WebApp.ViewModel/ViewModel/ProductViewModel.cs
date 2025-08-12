@@ -15,5 +15,7 @@ namespace WebApp.ViewModel.ViewModel
         public string ImagePath { get; set; }
         public string Key { get; set; }
         public int Status { get; set; } // 0 = bình thường, 1 = hot, 2 = ẩn
+        public List<string> Images { get; set; } = new();
+        public List<string> Sizes { get; set; } = new();
     }
 }

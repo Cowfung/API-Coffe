@@ -19,3 +19,4 @@ D:\Reactjs\API\WebApp.Repository\bin\Debug\net8.0\WebApp.DataBase.dll
 D:\Reactjs\API\WebApp.Repository\bin\Debug\net8.0\WebApp.DataBase.pdb
 D:\Reactjs\API\WebApp.Repository\bin\Debug\net8.0\WebApp.Infrastructure.dll
 D:\Reactjs\API\WebApp.Repository\bin\Debug\net8.0\WebApp.Infrastructure.pdb
+D:\Reactjs\API\WebApp.Repository\obj\Debug\net8.0\WebApp.Repository.sourcelink.json

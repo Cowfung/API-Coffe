@@ -5,14 +5,18 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using WebApp.DataBase;
+using WebApp.Infrastructure;
 using WebApp.Interface;
 using WebApp.Model;
 using WebApp.Repository;
 using WebApp.Service.Implenment;
 using WebApp.Service.Interface;
 using WebApp.ViewModel.Mapper;
+using WebApplication1.Extenxions;
 using WebApplication1.Middlewares;
 using WWebApplication1.Middlewares;
 
@@ -20,6 +24,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -54,6 +59,14 @@ builder.Services.AddAuthentication(opt =>
     };
 
 });
+var host = Dns.GetHostEntry(Dns.GetHostName());
+foreach (var ip in host.AddressList)
+{
+    if (ip.AddressFamily == AddressFamily.InterNetwork)
+    {
+        Console.WriteLine("Backend IP: " + ip.ToString());
+    }
+}
 builder.Services.AddAuthorization();
 //Đăng ký AutoMapper
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
@@ -66,12 +79,15 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 #endregion
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
-
+builder.Services.AddScoped<IProductImageService, ProductImageService>();
+builder.Services.AddScoped<IProductImageRepository, ProductImageRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+builder.Services.AddScoped<ICommentService,CommentService>();
 #endregion
 builder.Services.AddControllers();
 
@@ -102,21 +118,33 @@ builder.Services.AddSwaggerGen(c =>
 //builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp",
-        builder =>
-        {
-            builder.WithOrigins("http://localhost:5173") // Vite mặc định port này
-                   .AllowAnyMethod()
-                   .AllowAnyHeader()
-                   .AllowCredentials();
-        });
+    options.AddPolicy("AllowAll",policy =>
+    {
+        policy.WithOrigins(
+            "http://localhost:5173",          // ✅ khi chạy trên máy dev
+            "http://10.110.17.175:5173"       // ✅ khi người khác dùng IP này truy cập FE
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials(); // nếu bạn dùng cookie/login
+    });
+});
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(7256);
 });
 
+builder.Services.AddSignalR(options =>
+{
+    options.EnableDetailedErrors = true;
+    options.ClientTimeoutInterval = TimeSpan.FromSeconds(60); // thời gian chờ client (default là 30s)
+    options.KeepAliveInterval = TimeSpan.FromSeconds(15);
+});
 
 
 var app = builder.Build();
 
-
+app.UseStaticFiles();
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseMiddleware<StatusCodeMiddleware>();
 // Configure the HTTP request pipeline.
@@ -125,12 +153,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseHttpsRedirection();
-app.UseCors("AllowReactApp");
+app.UseWebSockets();
+app.UseRouting();
+app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+    endpoints.MapHub<CommentHub>("/commentHub").RequireCors("AllowAll"); ;
+});
+//app.UseHttpsRedirection();
 
-app.MapControllers();
+
 
 app.Run();

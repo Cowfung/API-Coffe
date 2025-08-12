@@ -28,7 +28,7 @@ namespace WebApp.Service.Implenment
 
         public async Task<ProductDetailResponse> GetById(int id)
         {
-            var product = await _productRepository.FindSingleAsync(x => x.Id == id, x => x.Category);
+            var product = await _productRepository.GetProductWithDetails(id);
             if (product == null)
                 throw new Exception("Product not found");
 
@@ -73,6 +73,11 @@ namespace WebApp.Service.Implenment
         {
             var hotProducts = await _productRepository.FindAllAsync(p=>p.Status == ProductStatus.Hot );
             return _mapper.Map<List<ProductViewModel>>(hotProducts);
+        }
+
+        public async Task<List<string>> GetSizesAsync(int productId)
+        {
+           return await _productRepository.GetSizesByProductIdAsync(productId);
         }
     }
 }

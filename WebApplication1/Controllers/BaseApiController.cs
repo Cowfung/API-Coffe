@@ -5,7 +5,7 @@ using WebApp.ViewModel.Common;
 namespace WebApplication1.Controllers
 {
     [Authorize]
-    
+    [Route("api/[controller]")]
     public class BaseApiController : ControllerBase
     {
         protected IActionResult Success<T>(T data, string message = "")

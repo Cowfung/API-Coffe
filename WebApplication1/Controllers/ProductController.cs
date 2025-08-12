@@ -1,20 +1,23 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApp.Service.Interface;
+using WebApp.ViewModel.Common;
 using WebApp.ViewModel.Request;
 using WebApp.ViewModel.ViewModel;
 
 namespace WebApplication1.Controllers
 {
     [AllowAnonymous]
-    [Route("api/[controller]")]
+    
     
     public class ProductController : BaseApiController
     {
         private readonly IProductService _productService;
-        public ProductController(IProductService productService)
+        private readonly IProductImageService _productImageService;
+        public ProductController(IProductService productService,IProductImageService productImageService)
         {
             _productService = productService;
+            _productImageService = productImageService;
         }
 
         [HttpGet]
@@ -62,6 +65,18 @@ namespace WebApplication1.Controllers
         {
             var products = await _productService.GetHotProduct();
             return Success(products);
+        }
+        [HttpGet("{productId}/images")]
+        public async Task<IActionResult>GetImages(int productId)
+        {
+            var images = await _productImageService.GetImageUrlByProductId(productId);
+            return Success(images);
+        }
+        [HttpGet("{id}/sizes")]
+        public async Task<IActionResult> GetSizes(int id)
+        {
+            var sizes = await _productService.GetSizesAsync(id);
+            return Success(sizes);
         }
     }
 }

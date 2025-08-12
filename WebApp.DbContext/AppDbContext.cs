@@ -16,7 +16,10 @@ namespace WebApp.DataBase
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options){}
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
-
+        public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<ProductSize> ProductSizes { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<CommentMedia> CommentsMedia { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,6 +29,15 @@ namespace WebApp.DataBase
             modelBuilder.Entity<Product>()
                 .Property(p => p.Status)
                 .HasConversion<int>();
+            modelBuilder.Entity<ProductSize>()
+                 .HasOne(ps => ps.Product)
+                 .WithMany(p => p.ProductSizes)
+                 .HasForeignKey(ps => ps.ProductId);
+            modelBuilder.Entity<Comment>()
+                .HasOne(c => c.User)
+                .WithMany() // hoặc .WithMany(u => u.Comments) nếu có navigation ngược
+                .HasForeignKey(c => c.UserId)
+                .IsRequired(false); // nếu UserId có thể null
 
             base.OnModelCreating(modelBuilder);
         }

@@ -15,3 +15,4 @@ D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\WebApp.Interface.pdb
 D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\ref\WebApp.Interface.dll
 D:\Reactjs\API\WebApp.Interface\bin\Debug\net8.0\WebApp.Infrastructure.dll
 D:\Reactjs\API\WebApp.Interface\bin\Debug\net8.0\WebApp.Infrastructure.pdb
+D:\Reactjs\API\WebApp.Interface\obj\Debug\net8.0\WebApp.Interface.sourcelink.json

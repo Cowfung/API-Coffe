@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebApp.Model;
 
 namespace WebApp.ViewModel.Response
 {
@@ -17,5 +18,7 @@ namespace WebApp.ViewModel.Response
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public int Status { get; set; }
+        public List<string> Images { get; set; } = new(); // 👈 thêm
+        public List<string> Sizes { get; set; } = new();
     }
 }

@@ -10,7 +10,7 @@ using WebApp.ViewModel.Request;
 namespace WebApplication1.Controllers
 {
     [AllowAnonymous]
-    [Route("api/[controller]")]
+    
     [ApiController]
     public class AuthController : BaseApiController
     {

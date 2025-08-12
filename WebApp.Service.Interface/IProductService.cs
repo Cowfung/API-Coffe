@@ -16,6 +16,8 @@ namespace WebApp.Service.Interface
         Task<ProductDetailResponse> GetById(int id);
         Task<ProductDetailResponse> Add(ProductCreateRequest product);
         Task<ProductDetailResponse> Update(ProductUpdateRequest product);
+        Task<List<string>> GetSizesAsync(int productId);
+
         Task Delete(int id);
     }
 }

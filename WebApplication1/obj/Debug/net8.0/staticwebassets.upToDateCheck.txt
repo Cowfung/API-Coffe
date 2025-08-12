@@ -1,0 +1,8 @@
+wwwroot\images\default-avatar.png
+wwwroot\uploads\comments\393116c0-c262-4608-9fe4-cc4e0bcf5a19.png
+wwwroot\uploads\comments\54a3b148-5556-4071-9721-1ffe9e282629.jpg
+wwwroot\uploads\comments\85a5fda9-86f4-4c1c-8406-e8e6800ba5c9.mp4
+wwwroot\uploads\comments\ba022707-3d33-42e6-9c06-a468341599de.mp4
+wwwroot\uploads\comments\c30d6efc-dde2-4a4e-ad11-61c84bcc6892.png
+wwwroot\uploads\comments\d70c9e3d-4eb0-42d3-b0ed-35c7e3d714af.png
+wwwroot\uploads\comments\de4e7bf3-eb4d-499d-ab89-7c69cf2f79d2.mp4

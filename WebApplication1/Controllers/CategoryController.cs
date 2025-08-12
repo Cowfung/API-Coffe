@@ -7,7 +7,7 @@ using WebApp.ViewModel.ViewModel;
 namespace WebApplication1.Controllers
 {
     [AllowAnonymous]
-    [Route("api/[controller]")]
+    
     
     public class CategoryController : BaseApiController
     {

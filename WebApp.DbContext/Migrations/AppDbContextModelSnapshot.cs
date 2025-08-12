@@ -252,6 +252,74 @@ namespace WebApp.DataBase.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("WebApp.Model.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("GuestEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GuestName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GuestPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("WebApp.Model.CommentMedia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CommentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FileType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CommentId");
+
+                    b.ToTable("CommentsMedia");
+                });
+
             modelBuilder.Entity("WebApp.Model.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -291,6 +359,49 @@ namespace WebApp.DataBase.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("WebApp.Model.ProductImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductImages");
+                });
+
+            modelBuilder.Entity("WebApp.Model.ProductSize", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Size")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductSizes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -344,6 +455,34 @@ namespace WebApp.DataBase.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("WebApp.Model.Comment", b =>
+                {
+                    b.HasOne("WebApp.Model.Product", "Products")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebApp.Model.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Products");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("WebApp.Model.CommentMedia", b =>
+                {
+                    b.HasOne("WebApp.Model.Comment", "comment")
+                        .WithMany("Media")
+                        .HasForeignKey("CommentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("comment");
+                });
+
             modelBuilder.Entity("WebApp.Model.Product", b =>
                 {
                     b.HasOne("WebApp.Model.Category", "Category")
@@ -355,9 +494,43 @@ namespace WebApp.DataBase.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("WebApp.Model.ProductImage", b =>
+                {
+                    b.HasOne("WebApp.Model.Product", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("WebApp.Model.ProductSize", b =>
+                {
+                    b.HasOne("WebApp.Model.Product", "Product")
+                        .WithMany("ProductSizes")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("WebApp.Model.Category", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("WebApp.Model.Comment", b =>
+                {
+                    b.Navigation("Media");
+                });
+
+            modelBuilder.Entity("WebApp.Model.Product", b =>
+                {
+                    b.Navigation("ProductImages");
+
+                    b.Navigation("ProductSizes");
                 });
 #pragma warning restore 612, 618
         }

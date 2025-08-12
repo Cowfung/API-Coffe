@@ -14,6 +14,9 @@ namespace WebApp.Model
         public string Key { get; set; }
 
         public ProductStatus Status { get; set; } = 0;   // ← Duy nhất
+        public ICollection<ProductSize> ProductSizes { get; set; } = new List<ProductSize>();
+        public List<ProductImage> ProductImages { get; set; } = new();
+
     }
 
 }
